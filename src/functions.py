@@ -1,4 +1,6 @@
 import json
+
+
 def read_json(file_name):
     """
     Читает файл json и возвращает его содержимое
@@ -7,6 +9,7 @@ def read_json(file_name):
     with open(file_name, 'r', encoding='utf-8') as f:
         read_json = json.load(f)
     return read_json
+
 
 def get_executed_operations(operation_list):
     """
@@ -27,6 +30,7 @@ def get_executed_operations(operation_list):
     sorted_operations = sorted(executed_operations, key=lambda x: x[0], reverse=True)
     last_five_operations = [operation[1] for operation in sorted_operations[:5]]
     return last_five_operations
+
 
 def format_from_account(input_from_account):
     '''
@@ -56,6 +60,7 @@ def format_from_account(input_from_account):
             return "Invalid bank account to"
         return from_account_split[0] + " " + from_account_split[1] + new_str
 
+
 def format_to_account(input_to_account):
     """
     Функция скрывает номер карты получателя
@@ -80,6 +85,7 @@ def format_to_account(input_to_account):
             return "Invalid bank account to"
         return to_account_split[0] + " " + to_account_split[1] + new_str
 
+
 def format_date(input_date):
     """
     Форматирует дату и время операции оставляя только дату в нужном формате
@@ -88,6 +94,7 @@ def format_date(input_date):
     """
     date_list = input_date[0:10].split('-')
     return '.'.join(date_list[::-1])
+
 
 def get_message(operation):
     '''
