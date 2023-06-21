@@ -111,4 +111,4 @@ def test_get_message():
 
 def test_main():
     with pytest.raises(FileNotFoundError):
-        read_json('../error_operations.json')
+        read_json('error_operations.json')
